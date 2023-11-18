@@ -4,11 +4,11 @@ import common.Calculator;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class MyStepdefs
-{
+public class MyStepdefs {
     private Calculator calculator;
 
     @Given("I have two numbers {int} and {int}")
@@ -22,9 +22,16 @@ public class MyStepdefs
         calculator.add();
     }
 
+    @When("I subtract the two numbers")
+    public void iSubtractTheTwoNumbers() {
+        calculator.subtract();
+    }
+
     @Then("I get the result {int}")
     public void iGetTheResult(int expected) {
         int actual = calculator.getResult();
         assertEquals(expected, actual);
     }
+
+
 }
